@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html{
+  font-size: 62.5%;
+}
+nav{
+  margin-bottom: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+nav .nav-bar{
+  background: #D42092;
+  padding: 1rem 2%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+nav .nav-bar a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0 2rem;
+  padding: .4rem;
+}
+.hero-img{
+  position: relative;
+  margin-top: 10rem;
+}
+.hero-img img{
+  display: block;
+  height: 20rem;
+  width: 90%;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  opacity: .6;
+}
+.hero-img h2{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 2.8rem;
+}
+hr{
+  margin: 4rem 5%;
+}
+.search-input{
+  width: 90%;
+  margin: 0 auto;
+}
+.search-input input{
+  width: 100%;
+  padding: 1rem .4rem;
+  border-radius: .6rem;
+  border: .1rem solid #707070;
+  outline: none;
+}
+.post-view{
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.post-view .post-box{
+  width: calc(90% / 3);
+}
+.post-view .post-box .content{
+  padding: 1rem;
+  border-radius: .6rem;
+  border: .1rem solid #707070;
+  margin-bottom: 2rem;
+}
+.post-view .post-box .title{
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: .1rem solid #D42092;
+  color: #D42092;
+  padding: 1rem 0;
+}
+.post-view .post-box .description{
+  padding: 1rem 0;
+  font-size: 1.6rem;
+}
+.btn{
+  font-size: 1.6rem;
+  color: #fff;
+  background: #D42092;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  border-radius: .6rem;
+  padding: .6rem 1rem;
+}
+/* The single article page */
+.post-container{
+  width: 90%;
+  margin: 0 auto;
+}
+.post-container .post-title{
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: .1rem solid #D42092;
+  color: #D42092;
+  padding: 1rem 0;
+}
+.post-container .post-content{
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+}
+.button-container{
+  display: flex;
+  gap: 4rem;
+}
+.button-container button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 4rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+/* Create post page */
+.create-post-box{
+  margin-top: 10rem;
+}
+.create-post-box h1{
+  margin: 2rem 2%;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  color: #D42092;
+  border-bottom: .1rem solid #707070;
+}
+.create-post-box .input-box{
+  width: 86%;
+  margin: 2rem 2%;
+}
+.create-post-box .input-box label{
+  display: block;
+  font-size: 2rem;
+}
+.create-post-box .input-box input, .create-post-box .input-box textarea{
+  width: 100%;
+  padding: .8rem .4rem;
+  border-radius: .6rem;
+  border: .1rem solid #707070;
+  outline: none;
+}
+.create-post-box .input-box textarea{
+  height: 15rem;
+}
+#content{
+  height: 25rem;
+}
+.input-box .btn{
+  padding: 1.5rem 8rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+footer{
+  margin-top: 6rem;
+  padding: 2rem 2%;
+  background: #D42092;
+  color: #fff;
+}
+footer hr{
+  width: 100%;
+  margin: 2rem 0;
+}
+footer .footer-link-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 4rem;
+}
+footer .footer-link-container .links p{
+  font-size: 1.8rem;
+  padding: 2rem 0;
+}
+footer .footer-link-container .links a{
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  font-size: 1.4rem;
+}
+footer .copy-right{
+  text-align: center;
+  font-size: 1.5rem;
+}
