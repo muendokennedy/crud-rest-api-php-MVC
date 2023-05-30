@@ -67,17 +67,18 @@ hr{
 .post-view{
   width: 90%;
   margin: 2rem auto;
-  display: flex;
-  justify-content: space-between;
-}
-.post-view .post-box{
-  width: calc(90% / 3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(90% / 3), 1fr));
+  gap: 4rem;
+
 }
 .post-view .post-box .content{
   padding: 1rem;
   border-radius: .6rem;
   border: .1rem solid #707070;
   margin-bottom: 2rem;
+  overflow: hidden;
+  height: 25rem;
 }
 .post-view .post-box .title{
   font-size: 2rem;
@@ -183,7 +184,7 @@ footer .footer-link-container{
   gap: 4rem;
 }
 footer .footer-link-container .links p{
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   padding: 2rem 0;
 }
 footer .footer-link-container .links a{
@@ -191,6 +192,7 @@ footer .footer-link-container .links a{
   display: block;
   color: #fff;
   font-size: 1.4rem;
+  margin: 3rem 0;
 }
 footer .copy-right{
   text-align: center;
