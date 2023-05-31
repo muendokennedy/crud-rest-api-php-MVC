@@ -149,6 +149,14 @@ class Postcotrl
     }
     $post->update($category_id, $title, $description, $body);
   }
+  public function delete_post()
+  {
+    $post = new Posts();
+
+    $post->id = $this->id;
+
+    $post->delete();
+  }
   
   public function empty_input($category_id, $title, $description, $body)
   {

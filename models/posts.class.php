@@ -116,7 +116,17 @@ class Posts extends Database
     $stmt->bindParam(":body", $this->body);
     $stmt->bindParam(":id", $this->id);
 
-     //echo $this->id;
+
+    $stmt->execute();
+  }
+  public function delete()
+  {
+    $query = "DELETE FROM {$this->table[0]} WHERE id = :id;";
+
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->bindParam(":id", $this->id);
+
 
     $stmt->execute();
   }

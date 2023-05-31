@@ -25,5 +25,6 @@
     <hr>
     <div class="copy-right">&copy; Official website of Postarata writers | by Kennedy Munyao all rights reserved</div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

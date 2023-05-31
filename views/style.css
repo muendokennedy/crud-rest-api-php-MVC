@@ -118,17 +118,49 @@ hr{
   padding: 1rem 0;
   font-size: 1.4rem;
 }
-.button-container{
+.post-container .button-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+.post-container .button-container.show{
+  display: block;
   display: flex;
   gap: 4rem;
 }
-.button-container button{
+#moodle-delete{
+  padding: 2rem 0;
+  border: .1rem ;
+  display: none;
+  font-size: 1.8rem;
+}
+#moodle-delete.show{
+  font-weight: 600;
+  border-radius: .6rem;
+  background: #d0b3b1;
+  color: #ff0000;
+  border: .1rem solid #ff0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-default{
+  display: block;
+  display: flex;
+  gap: 4rem;
+}
+.button-container button, .button-default button{
   border: none;
   outline: none;
   cursor: pointer;
   padding: 1rem 4rem;
   font-size: 1.8rem;
   font-weight: 600;
+}
+.button-container button a, .button-default button a{
+  text-decoration: none;
+  color: #fff;
 }
 /* Create post page */
 .create-post-box{
@@ -169,6 +201,25 @@ hr{
   font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
+}
+#error {
+  margin-top: 1rem;
+  font-size: 2.2rem;
+  background: #d0b3b1;
+  color: #ff0000;
+  border: .1rem solid #ff0000;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: .6rem;
+  margin-bottom: .8rem;
+  font-weight: 600;
+  width: 90%;
+  margin: 0 auto;
+}
+#back-home-container{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 4rem;
 }
 footer{
   margin-top: 6rem;
