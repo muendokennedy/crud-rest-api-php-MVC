@@ -1,6 +1,6 @@
 <?php 
 
-require_once("../controller/postcotrl.php");
+require_once("../controller/postcotrl.class.php");
 
 ?>
 

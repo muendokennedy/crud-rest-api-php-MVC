@@ -149,7 +149,9 @@ hr{
   display: block;
   font-size: 2rem;
 }
-.create-post-box .input-box input, .create-post-box .input-box textarea{
+.create-post-box .input-box input, 
+.create-post-box .input-box textarea, 
+.create-post-box .input-box select{
   width: 100%;
   padding: .8rem .4rem;
   border-radius: .6rem;
