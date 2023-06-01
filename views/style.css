@@ -122,7 +122,7 @@ hr{
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: .5rem 0;
 }
 .post-container .button-container.show{
   display: block;
@@ -130,10 +130,11 @@ hr{
   gap: 4rem;
 }
 #moodle-delete{
-  padding: 2rem 0;
   border: .1rem ;
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  padding: 2rem;
+  margin: 0 auto;
 }
 #moodle-delete.show{
   font-weight: 600;
@@ -144,6 +145,7 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 .button-default{
   display: block;
@@ -202,9 +204,9 @@ hr{
   font-weight: 600;
   cursor: pointer;
 }
-#error {
+.error {
   margin-top: 1rem;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   background: #d0b3b1;
   color: #ff0000;
   border: .1rem solid #ff0000;
@@ -213,11 +215,17 @@ hr{
   border-radius: .6rem;
   margin-bottom: .8rem;
   font-weight: 600;
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
 }
+.delete-success{
+  background: #86b886;
+  color: #0b8c0b;
+  border: .1rem solid #0b8c0b;
+
+}
 #back-home-container{
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
   margin-top: 4rem;
 }

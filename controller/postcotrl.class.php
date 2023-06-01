@@ -16,8 +16,26 @@ class Postcotrl
 
     $post->read_post();
 
-    echo "<div class=\"post-title\"> {$post->title} </div>
-        <div class=\"post-content\">{$post->body}</div>";
+    echo "<div class=\"post-container\">
+          <div class=\"post-title\"> {$post->title} </div>
+        <div class=\"post-content\">{$post->body}</div>
+        <div class=\"button-default\">
+        <button class=\"btn\"><a href=\"create.php?id={$post->id}\">EDIT</a></button>
+          <button class=\"btn\" id=\"default\">DELETE</button>
+      </div>
+      <div id=\"moodle-delete\">
+        <div>
+        <p>Are you sure you want to delete this post? Once deleted it cannot be recovered!</p>
+      <div class=\"button-container\">
+        <button class=\"btn\" id=\"cancel\">CANCEL</button>
+        <form action=\"../includes/delete.includes.php\" method=\"post\">
+          <input type=\"hidden\" name=\"uid\" value=\"{$post->id}\">
+          <button class=\"btn\">CONTINUE</button>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>";
 
   }
 
@@ -31,10 +49,38 @@ class Postcotrl
       $post->id = $_GET["id"];
 
       $post->read_post();
+
+      if(isset($_GET["error"])){
+
+        if(($_GET["error"] == "none")){
+  
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error delete-success\">The post has been published successfully</div>
+                </div>";
+        }else if(($_GET["error"] == "emptyinputs")){
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error\">Please fill in all the fields</div>
+                </div>";
+        }
+  
+      }elseif(isset($_GET["errorp"])){
+
+        if(($_GET["errorp"] == "none")){
+  
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error delete-success\">The post has been upadated successfully</div>
+                </div>";
+        }else if(($_GET["errorp"] == "emptyinputs")){
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error\">Please fill in all the fields</div>
+                </div>";
+        }
+  
+      }
       
       echo "<div class=\"create-post-box\">
             <h1>create a new post</h1>
-            <form action=\"../includes/update.includes.php\" method=\"POST\">
+            <form id=\"update-form\" action=\"../includes/update.includes.php\" method=\"POST\">
               <div class=\"input-box\">
                 <label for=\"title\">Title</label>
                 <input type=\"text\" name=\"title\" id=\"title\" value=\"{$post->title}\">
@@ -63,11 +109,42 @@ class Postcotrl
             </form>
             </div>";
 
+
+
     } else {
 
+
       echo "<div class=\"create-post-box\">
-            <h1>create a new post</h1>
-            <form action=\"../includes/update.includes.php\" method=\"POST\">
+            <h1>create a new post</h1>";
+
+            
+      if(isset($_GET["error"])){
+
+        if(($_GET["error"] == "none")){
+  
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error delete-success\">The post has been published successfully</div>
+                </div>";
+        }else if(($_GET["error"] == "emptyinputs")){
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error\">Please fill in all the fields</div>
+                </div>";
+        }
+  
+      }elseif(isset($_GET["errorp"])){
+
+        if(($_GET["errorp"] == "none")){
+  
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error delete-success\">The post has been upadated successfully</div>
+                </div>";
+        }else if(($_GET["errorp"] == "emptyinputs")){
+          echo "<div class=\"create-error\"> 
+                  <div id=\"error\" class=\"error\">Please fill in all the fields</div>
+                </div>";
+        }
+      }
+        echo "<form id=\"publish-form\" action=\"../includes/create.includes.php\" method=\"POST\">
               <div class=\"input-box\">
                 <label for=\"title\">Title</label>
                 <input type=\"text\" name=\"title\" id=\"title\">
@@ -90,7 +167,7 @@ class Postcotrl
                 <textarea name=\"content\" id=\"content\"></textarea>
               </div>
               <div class=\"input-box\">
-                <button type=\"submit\" class=\"btn\" name=\"submit\">Publish</button>
+                <button type=\"submit\" class=\"btn\" id=\"btn\" name=\"submit\">Publish</button>
               </div>
             </form>
             </div>";
@@ -142,7 +219,7 @@ class Postcotrl
 
     if(!$this->empty_input($category_id, $title, $description, $body)){
 
-      header("Location: ../views/create.php?error=emptyinputs");
+      header("Location: ../views/create.php?errorp=emptyinputs");
       
       exit();
       
@@ -173,5 +250,23 @@ class Postcotrl
     }
     return $result;
   
+  }
+
+  public function show_success_delete()
+  {
+        if(isset($_GET["msg"])){
+
+      if(($_GET["msg"] == "deletesuccessfully")){
+
+        echo "<div> <div id=\"error\" class=\"error delete-success\">The post has been deleted successfully</div>";
+
+         echo "<div class=\"button-container\" id=\"back-home-container\">
+                <button class=\"btn\" id=\"back-home\"><a href=\"index.php\">HOME</a></button>
+              </div>
+              </div>";
+        require_once("footer.php");
+      }
+
+    }
   }
 }

@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   $created_post->update_post($name, $title, $description, $body);
 
-  header("Location: ../views/create.php?error=none");
+  header("Location: ../views/create.php?errorp=none");
 
 exit();
 
