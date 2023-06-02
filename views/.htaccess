@@ -1,0 +1,31 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+RewriteRule ^post/([0-9]+)/([0-9a-zA-Z_-]+) post.php?id=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+RewriteRule ^post/([0-9]+)/([0-9a-zA-Z_-]+) post.php?msg=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+RewriteRule ^create/([0-9]+)/([0-9a-zA-Z_-]+) create.php?id=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+RewriteRule ^create/([0-9]+)/([0-9a-zA-Z_-]+) create.php?error=$1 [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+RewriteRule ^create/([0-9]+)/([0-9a-zA-Z_-]+) create.php?errorp=$1 [NC,L]
