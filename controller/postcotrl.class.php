@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/posts.class.php");
+require_once dirname(__DIR__) . "/models/posts.class.php";
 
 
 class Postcotrl
@@ -189,7 +189,7 @@ class Postcotrl
       <div class=\"title\">{$result["title"]}</div>
       <div class=\"description\">{$result["description"]}</div>
       </div>
-      <a href=\"post.php?id={$result["id"]}\" class=\"btn\">Read more</a>
+      <a href=\"/views/post.php?id={$result["id"]}\" class=\"btn\">Read more</a>
       </div>";
 
     }
