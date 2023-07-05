@@ -21,21 +21,3 @@ cancelBtn.onclick = () => {
   defaultMoodle.style.display = "flex";
 }
 
-// window.onload = function(){
-//   if(postSubmitBtn.innerHTML == "Publish"){
-//     createMessage.innerHTML = "Post published successfully";
-//   }
-//   else if(postSubmitBtn.innerHTML == "Update"){
-//     createMessage.innerHTML = "Post Updated successfully";
-//   }
-// }
-
-formPublish.onsubmit = () => {
-  console.log("hello");
-  createMessage.innerHTML = "Post published successfully";
-}
-formUpdate.onsubmit = () => {
-  console.log("hello");
-  createMessage.innerHTML = "Post Updated successfully";
-}
-
